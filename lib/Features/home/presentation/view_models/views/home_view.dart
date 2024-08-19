@@ -1,10 +1,12 @@
+import 'package:booklyapp/Features/home/presentation/view_models/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
-  static String id = 'HomeScreen';
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold(
+      body: HomeViewBody(),
+    );
   }
 }
