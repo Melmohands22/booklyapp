@@ -11,7 +11,7 @@ class CustomAppbar extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 50, right: 16, left: 16),
+          padding: const EdgeInsets.only(top: 50, right: 16, left: 16 , bottom: 20),
           child: Row(children: [
             Image.asset(
               AssetsDataa.logo,
