@@ -8,7 +8,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomAppbar(),
+        const CustomAppbar(),
       ],
     );
   }
