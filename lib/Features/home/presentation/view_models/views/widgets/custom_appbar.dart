@@ -11,14 +11,15 @@ class CustomAppbar extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 50, right: 16, left: 16 , bottom: 20),
+          padding:
+              const EdgeInsets.only(top: 50, right: 30, left: 30, bottom: 20),
           child: Row(children: [
             Image.asset(
               AssetsDataa.logo,
               width: 100,
               height: 60,
             ),
-            const SizedBox(width: 215),
+            const SizedBox(width: 190),
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.search),
