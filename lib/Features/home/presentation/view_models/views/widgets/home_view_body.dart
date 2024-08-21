@@ -1,5 +1,4 @@
 import 'package:booklyapp/Core/utils/styles.dart';
-import 'package:booklyapp/Features/home/presentation/view_models/views/widgets/best_seller_item.dart';
 import 'package:booklyapp/Features/home/presentation/view_models/views/widgets/best_seller_list_view.dart';
 import 'package:booklyapp/Features/home/presentation/view_models/views/widgets/custom_appbar.dart';
 import 'package:booklyapp/Features/home/presentation/view_models/views/widgets/featured_books_list_view.dart';
