@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: MediaQuery.of(context).size.height * .070,
       child: TextButton(
         style: TextButton.styleFrom(
             backgroundColor: backgroundColor,
@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
           style: Styles.textStyle16.copyWith(
               color: textColor,
               fontWeight: FontWeight.w900,
-              fontSize: fontSize ),
+              fontSize: fontSize),
         ),
       ),
     );
