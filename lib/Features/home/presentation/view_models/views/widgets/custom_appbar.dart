@@ -11,25 +11,19 @@ class CustomAppbar extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * .060,
-            right: MediaQuery.of(context).size.height * .030,
-            left: MediaQuery.of(context).size.height * .030,
-            bottom: MediaQuery.of(context).size.height * .030,
-          ),
+          padding:
+              const EdgeInsets.only(top: 50, right: 30, left: 30, bottom: 20),
           child: Row(children: [
             Image.asset(
               AssetsDataa.logo,
-              width: MediaQuery.of(context).size.width * .25,
-              height: MediaQuery.of(context).size.height * .075,
+              width: 100,
+              height: 60,
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .46,
-            ),
+            const SizedBox(width: 190),
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.search),
-              iconSize: MediaQuery.of(context).size.height * .050,
+              iconSize: 40,
             ),
           ]),
         ),

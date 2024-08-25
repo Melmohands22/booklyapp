@@ -10,20 +10,16 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        left: MediaQuery.of(context).size.height * .030,
-      ),
+      padding: const EdgeInsets.only(left: 30.0),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * .15,
+        height: 130,
         child: Row(
           children: [
             AspectRatio(
               aspectRatio: 2.5 / 4,
               child: Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      MediaQuery.of(context).size.height * .010,
-                    ),
+                    borderRadius: BorderRadius.circular(8),
                     image: const DecorationImage(
                       fit: BoxFit.fill,
                       image: AssetImage(
@@ -32,8 +28,8 @@ class BestSellerItem extends StatelessWidget {
                     )),
               ),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .060,
+            const SizedBox(
+              width: 30,
             ),
             Expanded(
               child: Column(
@@ -48,15 +44,15 @@ class BestSellerItem extends StatelessWidget {
                         style: Styles.textStyle20
                             .copyWith(fontFamily: kGtSectraFine)),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * .0016,
+                  const SizedBox(
+                    height: 3,
                   ),
                   const Text(
                     'J.K. Rowling',
                     style: Styles.textStyle14,
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * .0020,
+                  const SizedBox(
+                    height: 3,
                   ),
                   Row(
                     children: [
