@@ -23,9 +23,7 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         Text('The Jungel Book',
             style: Styles.textStyle30.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: kGtSectraFine)),
+                fontWeight: FontWeight.bold, fontFamily: kGtSectraFine)),
         const SizedBox(
           height: 6,
         ),
