@@ -1,3 +1,4 @@
+import 'package:booklyapp/Features/home/presentation/views/data/models/book_model/volume_info.dart';
 import 'package:equatable/equatable.dart';
 
 import 'item.dart';
@@ -6,8 +7,10 @@ class BookModel extends Equatable {
   final String? kind;
   final int? totalItems;
   final List<Item>? items;
+  final VolumeInfo volumeInfo;
 
-  const BookModel({this.kind, this.totalItems, this.items});
+  const BookModel(
+      {required this.volumeInfo, this.kind, this.totalItems, this.items});
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
@@ -15,6 +18,8 @@ class BookModel extends Equatable {
         items: (json['items'] as List<dynamic>?)
             ?.map((e) => Item.fromJson(e as Map<String, dynamic>))
             .toList(),
+        volumeInfo:
+            VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
