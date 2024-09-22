@@ -44,5 +44,4 @@ class HomeRepoImpl implements HomeRepo {
       return left(ServerFailure(ex.toString()));
     }
   }
-}  
- 
+}
