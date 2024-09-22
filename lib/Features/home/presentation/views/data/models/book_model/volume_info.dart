@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-
 import 'image_links.dart';
 import 'industry_identifier.dart';
 import 'panelization_summary.dart';
@@ -19,12 +18,12 @@ class VolumeInfo extends Equatable {
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
-  final ImageLinks imageLinks; // Made nullable
+  final ImageLinks? imageLinks;
   final String? language;
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
-  final int? averageRating;
+  final double? averageRating;
   final int? ratingCount;
 
   const VolumeInfo(
@@ -50,7 +49,9 @@ class VolumeInfo extends Equatable {
       this.canonicalVolumeLink});
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
-        averageRating: (json['averageRating'] as int?),
+        averageRating: (json['averageRating'] is double
+            ? json['averageRating']
+            : (json['averageRating'] as int?)?.toDouble()),
         ratingCount: json['ratingCount'] as int?,
         title: json['title'] as String?,
         authors: (json['authors'] as List<dynamic>?)
@@ -77,8 +78,9 @@ class VolumeInfo extends Equatable {
             ? null
             : PanelizationSummary.fromJson(
                 json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks:
-            ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+        imageLinks: ['imageLinkes'] == null
+            ? null
+            : ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,
@@ -100,7 +102,7 @@ class VolumeInfo extends Equatable {
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
         'panelizationSummary': panelizationSummary?.toJson(),
-        'imageLinks': imageLinks.toJson(),
+        'imageLinks': imageLinks?.toJson(),
         'language': language,
         'previewLink': previewLink,
         'infoLink': infoLink,
@@ -125,7 +127,7 @@ class VolumeInfo extends Equatable {
       allowAnonLogging,
       contentVersion,
       panelizationSummary,
-      imageLinks, // Nullable
+      imageLinks,
       language,
       previewLink,
       infoLink,

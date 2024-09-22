@@ -1,3 +1,4 @@
+import 'package:booklyapp/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomError extends StatelessWidget {
@@ -12,7 +13,8 @@ class CustomError extends StatelessWidget {
     return Center(
         child: Text(
       errMessage,
-      style: TextStyle(fontSize: 18),
+      style: Styles.textStyle18,
+      textAlign: TextAlign.center,
     ));
   }
 }
