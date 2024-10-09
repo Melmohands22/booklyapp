@@ -1,6 +1,7 @@
-import 'package:booklyapp/Features/search/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:booklyapp/Features/search/presentation/manger/cubit/search_cubit.dart';
 import 'package:booklyapp/Features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -11,19 +12,20 @@ class SearchViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          CustomSearchTextField(),
-          SizedBox(
-            height: 16,
+        children: [
+          TextField(
+            onChanged: ( text) {
+              context.read<SearchCubit>().fetchSearchBooks(text);
+            },
+            decoration: const InputDecoration(
+              hintText: 'Search for a book',
+              border: OutlineInputBorder(),
+            ),
           ),
-          Text(
-            'Result',
-            style: TextStyle(fontSize: 18),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Expanded(child: SearchResultListView()),
+          const SizedBox(height: 16),
+          const Text('Result', style: TextStyle(fontSize: 18)),
+          const SizedBox(height: 16),
+          const Expanded(child: SearchResultListView()),
         ],
       ),
     );

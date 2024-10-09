@@ -1,4 +1,5 @@
 import 'package:booklyapp/Features/home/presentation/views/data/models/book_model/access_info.dart';
+import 'package:booklyapp/Features/home/presentation/views/data/models/book_model/search_info.dart';
 import 'package:booklyapp/Features/home/presentation/views/data/models/book_model/volume_info.dart';
 import 'package:equatable/equatable.dart';
 
@@ -10,9 +11,10 @@ class BookModel extends Equatable {
   final List<Item>? items;
   final VolumeInfo volumeInfo;
   final AccessInfo accessInfo;
-
+  final SearchInfo searchInfo;
   const BookModel(
       {required this.volumeInfo,
+      required this.searchInfo,
       this.kind,
       this.totalItems,
       this.items,
@@ -28,6 +30,9 @@ class BookModel extends Equatable {
             VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
         accessInfo:
             AccessInfo.fromJson(json['accessInfo'] as Map<String, dynamic>),
+        searchInfo: json['searchInfo'] != null
+          ? SearchInfo.fromJson(json['searchInfo'] as Map<String, dynamic>)
+          : SearchInfo(),
       );
 
   Map<String, dynamic> toJson() => {
@@ -38,4 +43,4 @@ class BookModel extends Equatable {
 
   @override
   List<Object?> get props => [kind, totalItems, items];
-}
+}  
